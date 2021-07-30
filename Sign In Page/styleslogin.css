@@ -56,7 +56,7 @@ a:visited {
 
 
 .form-control{
-    width: 30%;
+    width: 60%;
 }
 
 .email-container{
@@ -69,9 +69,12 @@ a:visited {
 .password-container{
     display: flex;
     justify-content: center;
+    padding-right: 18px;
 }
 
 .main{
+    display: flex;
+    justify-content: center;
     margin-top: 70px;
 }
 
@@ -94,3 +97,24 @@ h6{
 label{
     padding-right: 10px;
 }
+
+.sign-in-btn{
+    background-color: #3A3755;
+    color: white;
+    
+}
+
+.btn-wrap{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+fieldset {
+    margin:0;
+    padding:10px 0px 10px 0px;
+    border:solid #3A3755;
+    border-radius: 8px;
+    width: 500px
+}
+
