@@ -7,6 +7,9 @@ const config = require ('./config/config.json');
 // var logger = require('morgan');
 
 const app = express();
+app.set('view engine', 'ejs')
+app.set('views', 'views')
+
 const server = http.createServer(app)
 
 const checkAuth = require('./checkAuth');
