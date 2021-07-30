@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link href="../Sign In Page/styleslogin.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <nav class="main-header">
         <a href="../Homepage/index.html"><img src="./images/lunch.png" class="logo" alt="logo"></a>
@@ -28,22 +30,28 @@
             </ul>
         </div>
     </nav>
-    <section class="main">
-        <div class="login-title">
-            <h1>Log In</h1>
-            <h6>Need a Lunch Table account? <a href="../Create Account Page/"> Sign Up.</a></h6>
-        </div>
-        <div class="login-form">
-            <div class="email-container">
-                <label for="formGroupExampleInput" class="form-label">Email</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
-              </div>
-              <div class="password-container">
-                <label for="formGroupExampleInput2" class="form-label">Password</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
-              </div>
-        </div>
-    </section>
-    
+    <form class="main">
+        <fieldset>
+            <div class="login-title">
+                <h1>Log In</h1>
+                <h6>Need a Lunch Table account? <a href="../Create Account Page/"> Sign Up.</a></h6>
+            </div>
+            <div class="login-form">
+                <div class="email-container">
+                    <label for="formGroupExampleInput" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                </div>
+                <div class="password-container">
+                    <label for="formGroupExampleInput2" class="form-label">Password</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+                </div>
+                <div class="btn-wrap">
+                    <button type="button" class="sign-in-btn">Sign In</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
 </body>
+
 </html>
