@@ -23,5 +23,11 @@ router.post('/', function(req, res, next) {
     })
 });
 
+router.get('/', (req, res) => {
+  db.Recipe.findAll()
+    .then(recipes => {
+      res.json(recipes)
+    })
+})
 module.exports = router;
 

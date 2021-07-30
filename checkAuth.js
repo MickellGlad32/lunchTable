@@ -1,6 +1,6 @@
 function checkAuth(req, res, next) {
     // check if the user exist on session
-    if (req.session.username){
+    if (req.session.user){
         next()
         // if the request is on login page
     } else if (req.path === '/users/login') {
