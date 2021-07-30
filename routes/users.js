@@ -1,73 +1,98 @@
 var express = require('express');
-const bcrypt = require('bcrypt');
 const db = require('../models');
 var router = express.Router();
+const bcrypt = require('bcrypt')
 
-// post/users/register
-router.post('/register', function (req, res, next) {
-  // cehck for email and password
-  if (!req.body || !req.body.email || !req.body.password) {
-    // respond with error if not included
-    res.status(422).json({ error: 'musct include email & password' })
-    return
-  }
-  // hash password
-  bcrypt.hash(req.body.password, 10)
-    .then((hash) => {
-      // store user details
-      db.Username.create({
-        email: req.body.email,
-        password: hash
+// POST /api/v1/users
+router.post('/register', async (req, res, next) => {
+
+  let name = req.body.name
+  let email = req.body.email
+  let password = req.body.password
+
+  await db.User.findOne({
+    where: {
+      email: email
+    }
+  }).then(existingUser => {
+    if (!existingUser) {
+      // check for all required fields
+      if (!req.body || !name || !email || !password) {
+        // if not all, send error
+        res.status(422).json({ error: 'must include name, email & password' })
+        return
+      }
+
+      // hash password
+      bcrypt.hash(password, 10, (err, hash) => {
+        if (err) {
+          res.status(422).json({ error: "error registering user" })
+        } else {
+          db.User.create({
+            name: name,
+            email: email,
+            password: hash
+          })
+            .then((user) => {
+              // respond with success
+              res.status(201).json(user);
+            })
+        }
       })
-        .then((username) => {
-          // respond with success
-          res.status(201).json(username);
-        })
+    } else {
+      res.status(422).json({error: "user already exists"})
+    }
+  })
 
 
-    })
 
 });
 
+
 // post/users/login
-router.post('/login', (req, res) => {
-  if (!req.body || !req.body.email || !req.body.password) {
-    // respond with error if not included
-    res.status(422).json({ error: 'musct include email & password' })
-    return
-  }
-  // find user
-  db.Username.findOne({
+router.post('/login', async(req, res) => {
+
+  let email = req.body.email
+  let password = req.body.password
+
+  await db.User.findOne({
     where: {
-      email: req.body.email
+      email: email
     }
-  })
-    .then((username) => {
-      //check user password
-      bcrypt.compare(req.body.password, username.password)
+  }).then(user => {
+    if (!user) {
+      if (!req.body || !email || !password) {
+        // respond with error if not included
+        res.status(422).json({ error: 'musct include email & password' })
+        return
+      } else {
+        res.status(422).json({error: "user does not exist"})
+      }
+    } else {
+      bcrypt.compare(password, user.password)
         .then((success) => {
           if (success) {
-
             //login user
-            req.session.user = username;
+            req.session.user = user;
             res.json({ message: 'successfully logged in' })
           } else {
             //incorrect password
             res.status(401).json({ error: 'incorrect password' })
           }
         })
-    })
-
-
-
-
+    }
+  })
 })
 
-router.get('/logout' , (req, res) => {
+
+router.get('/logout', (req, res) => {
   //tell express theat the user logged out
-  req.session.username = null;
+  req.session.destroy()
   // send response to show it successful
-  res.json({ message: 'successfully loged out'})
+  res.json({ message: 'successfully loged out' })
 })
+
+
+// db.User.sync({alter: true})
 
 module.exports = router;

@@ -12,8 +12,7 @@ const server = http.createServer(app)
 const checkAuth = require('./checkAuth');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/api/Users');
-const apiUsersRouter = require('./routes/api/users')
+const usersRouter = require('./routes/Users')
 const apiRecipesRouter = require('./routes/api/recipes')
 const apiFavoritesRouter = require('./routes/api/favorites')
 
@@ -24,22 +23,21 @@ app.use(express.static('./public'))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(
-//     session({
-//       secret: 'secret', // used to sign the cookie
-//       resave: false, // update session even w/ no changes
-//       saveUninitialized: true, // always create a session
-//       cookie: {
-//         secure: false, // true: only accept https req's
-//         maxAge: 2592000, // time in seconds
-//       }
-    // })
-//   );
+app.use(
+    session({
+      secret: 'secret', // used to sign the cookie
+      resave: false, // update session even w/ no changes
+      saveUninitialized: true, // always create a session
+      cookie: {
+        secure: false, // true: only accept https req's
+        maxAge: 2592000, // time in seconds
+      }
+    })
+  );
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/api/v1/users' , checkAuth, apiUsersRouter)
+app.use('/users' , usersRouter)
 app.use('/api/v1/recipes' , checkAuth, apiRecipesRouter)
 app.use('/api/v1/favorites' , checkAuth, apiFavoritesRouter)
 
