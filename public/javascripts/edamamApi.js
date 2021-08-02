@@ -34,6 +34,7 @@ searchForm.addEventListener('submit', (event) => {
                     <div class="card-body mb-3">
                         <h5 id="recipe-name"class="card-title">${label}</h5>
                         <p id="recipe-source" class="card-text">${source}</p>
+                        <p id="recipe-source" class="card-text">${id}</p>
                         <a id="eventButton" data-id="${id}" data-name="${label}" href="./results.html" class="btn btn-outline-light eventButton">Recipe Page</a>
                     </div>
                 </div>`
