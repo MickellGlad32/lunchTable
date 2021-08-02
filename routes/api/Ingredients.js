@@ -25,7 +25,7 @@ router.post('/', function(req, res, next) {
   
   router.get('/', (req, res) => {
     db.ingredient.findAll()
-      .then(ringredients => {
+      .then(ingredients => {
         res.json(ingredients)
       })
   })
