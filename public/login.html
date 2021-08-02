@@ -33,7 +33,7 @@
             </ul>
         </div>
     </nav>
-    <form class="main" action="http://127.0.0.1:3000/users/login" method="POST">
+    <form class="main" action="/users/login" method="POST">
         <fieldset>
             <div class="login-title">
                 <h1>Log In</h1>
@@ -41,10 +41,10 @@
             </div>
             <div class="login-form">
                 <div class="email-container">
-                    <input type="text" class="form-control" name="username" id="login-username" placeholder="username/email">
+                    <input type="email" class="form-control" name="email" id="login-email" placeholder="email">
                 </div>
                 <div class="password-container">
-                    <input type="password" class="form-control" id="login-password" placeholder="password">
+                    <input type="password" class="form-control" id="login-password" name="password" placeholder="password">
                 </div>
                 <div class="btn-wrap">
                     <button type="submit" class="sign-in-btn" id="log-in">Sign In</button>
