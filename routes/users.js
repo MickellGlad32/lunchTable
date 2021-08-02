@@ -93,6 +93,6 @@ router.get('/logout', (req, res) => {
 })
 
 
-// db.User.sync({alter: true})
+
 
 module.exports = router;

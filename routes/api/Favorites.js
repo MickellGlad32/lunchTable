@@ -16,25 +16,21 @@ db.Favorites.findAll({
 // POST /api/v1/favorite/:id
 router.post('/:id', (req, res) => {
     // check for all required fields
-    if (!req.body || !req.body.title) {
-      // --if not, send error and stop
-      res.status(422).json({ error: 'Please select favorite' })
-      return
-    }
+  
     // add fav to recipe table if from API??
 
     // check if recipe exists
-    db.User.findByPk(req.params.id)
-      .then((recipe) => {
+    db.User.findByPk(req.session.user.id)
+      .then((user) => {
         // if there is no user, respond with 404
-        if (!recipe) {
-          res.status(404).json({ error: 'could not find the recipe' })
+        if (!user) {
+          res.status(404).json({ error: 'could not find the user ' })
           return
         }
-  
+        console.log(user)
         // create new favotite
         user.createFavorite({
-          title: req.body.title
+          RecipeId: req.params.id
         })
           .then((favorite) => {
             // respond with new favorite
