@@ -3,8 +3,7 @@ var express = require("express");
 var path = require('path');
 var cookieParser = require('cookie-parser');
 const session = require('express-session');
-const config = require ('./config/config.json');
-// var logger = require('morgan');
+
 
 const app = express();
 const server = http.createServer(app)
@@ -21,7 +20,7 @@ const apiInstructionsRouter = require('./routes/api/Instructions')
 
 
 // app.use(logger('dev'));
-app.use(express.static('./public'))
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

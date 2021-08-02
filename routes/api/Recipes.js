@@ -32,6 +32,6 @@ router.get('/', (req, res) => {
     })
 })
 
-db.Recipe.sync({alter: true})
+
 module.exports = router;
 
