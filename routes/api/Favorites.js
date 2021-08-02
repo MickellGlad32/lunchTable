@@ -21,13 +21,14 @@ router.post('/:id', (req, res) => {
       res.status(422).json({ error: 'Please select favorite' })
       return
     }
-  
-    // check if user exists
+    // add fav to recipe table if from API??
+
+    // check if recipe exists
     db.User.findByPk(req.params.id)
-      .then((user) => {
+      .then((recipe) => {
         // if there is no user, respond with 404
-        if (!user) {
-          res.status(404).json({ error: 'could not find the user' })
+        if (!recipe) {
+          res.status(404).json({ error: 'could not find the recipe' })
           return
         }
   
