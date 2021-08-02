@@ -33,27 +33,26 @@
             </ul>
         </div>
     </nav>
-    <form class="main">
+    <form class="main" action="http://127.0.0.1:3000/users/login" method="POST">
         <fieldset>
             <div class="login-title">
                 <h1>Log In</h1>
-                <h6>Need a Lunch Table account?  <a href="../Create Account Page/"> Sign up</a></h6>
+                <h6>Need a Lunch Table account?  <a href="./createAccount.html"> Sign up</a></h6>
             </div>
             <div class="login-form">
                 <div class="email-container">
-                    <label for="formGroupExampleInput" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                    <input type="text" class="form-control" name="username" id="login-username" placeholder="username/email">
                 </div>
                 <div class="password-container">
-                    <label for="formGroupExampleInput2" class="form-label">Password</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+                    <input type="password" class="form-control" id="login-password" placeholder="password">
                 </div>
                 <div class="btn-wrap">
-                    <button type="button" class="sign-in-btn">Sign In</button>
+                    <button type="submit" class="sign-in-btn" id="log-in">Sign In</button>
                 </div>
             </div>
         </fieldset>
     </form>
+
 
 </body>
 
