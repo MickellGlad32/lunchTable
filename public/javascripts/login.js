@@ -12,20 +12,3 @@ document.addEventListener('click', (event) => {
         }
     }
 })
-
-
-
-// sign up info
-// var inputUsername = document.getElementById("username")
-// const inputEmail = document.getElementById("email")
-
-//sign up function
-// document.addEventListener('click', (event) => {
-//     if (event.target.id == 'sign-in') {
-//         event.preventDefault();
-//         localStorage.setItem("username", inputUsername.value)
-//         localStorage.setItem("loggedin", "true")
-//         window.location = "./index.html";
-//     }
-// })
-
