@@ -14,6 +14,12 @@ module.exports = {
       category: {
         type: Sequelize.STRING
       },
+      ingredients: {
+        type: Sequelize.STRING
+      },      
+      instructions: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
