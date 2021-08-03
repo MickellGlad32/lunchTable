@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #FFD578;
+}
+
+.main-header{
+    height: 225px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 150px 0px 150px;
+    
+    /* background-color: #FFD578; */
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding-left: 0px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 20px;
+}
+
+
+a:hover{
+    cursor: pointer;
+}
+
+a:link {
+    color: #3A3755;
+  }
+
+a:visited {
+    color: #3A3755;
+  }
+
+  .logo{  
+    height: 250px;
+    width: 250px;
+}
+
+
+.nav-btn{
+    background-color: ghostwhite;
+    border-radius: 18px;
+}
+
+
+
+.form-control{
+    width: 60%;
+}
+
+.email-container{
+    display: flex;
+    justify-content: center;
+    padding: 0px 0px 20px 0px;
+}
+
+
+.password-container{
+    display: flex;
+    justify-content: center;
+    padding: 0px 0px 20px 0px;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+h6 a{
+    cursor: pointer;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+h6{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+label{
+    padding-right: 10px;
+}
+
+.sign-in-btn{
+    background-color: #3A3755;
+    color: white;
+    
+}
+
+.btn-wrap{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+fieldset {
+    margin:0;
+    padding:10px 0px 10px 0px;
+    border:solid #3A3755;
+    border-radius: 8px;
+    width: 500px
+}
+

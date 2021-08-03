@@ -35,7 +35,8 @@ router.post('/register', async (req, res, next) => {
           })
             .then((user) => {
               // respond with success
-              res.status(201).json(user);
+              req.session.user = user
+              res.redirect("/")
             })
         }
       })
@@ -63,7 +64,7 @@ router.post('/login', async(req, res) => {
     if (!user) {
       if (!req.body || !email || !password) {
         // respond with error if not included
-        res.status(422).json({ error: 'musct include email & password' })
+        res.status(422).json({ error: 'must include email & password' })
         return
       } else {
         res.status(422).json({error: "user does not exist"})
@@ -74,7 +75,7 @@ router.post('/login', async(req, res) => {
           if (success) {
             //login user
             req.session.user = user;
-            res.json({ message: 'successfully logged in' })
+            res.redirect("/")
           } else {
             //incorrect password
             res.status(401).json({ error: 'incorrect password' })
@@ -93,6 +94,6 @@ router.get('/logout', (req, res) => {
 })
 
 
-// db.User.sync({alter: true})
+
 
 module.exports = router;
