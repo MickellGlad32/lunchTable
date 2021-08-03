@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Sign Up</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="../Sign In Page/styleslogin.css" rel="stylesheet">
+    <link href="./stylesheets/createacctstyles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dosis&display=swap" rel="stylesheet">
 </head>
 
@@ -17,40 +17,38 @@
         <a href="../Homepage/index.html"><img src="./images/lunch.png" class="logo" alt="logo"></a>
         <div class="nav-list">
             <ul class="nav-items">
-                <!-- <li class="nav-item">
-                <a class="nav-link" href="./index.html">Home</a>
-            </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" href="../Sign In Page/login.html">Sign In</a>
+                    <a class="nav-link" href="./login.html">Sign In</a>
                 </li>
                 <li class="nav-item nav-btn">
-                    <a class="nav-link" href="../Create Account Page/index.html">Create
-                        Account</a>
+                    <a class="nav-link" href="./index.html">Home</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <form class="main">
+    
+    <form class="main" action="/users/register" method="POST">
         <fieldset>
-            <div class="login-title">
-                <h1>Create Account</h1>
-                <!-- <h6>Need a Lunch Table account? <a href="../Create Account Page/"> Sign Up.</a></h6> -->
+            <div class="signup-title">
+                <h1>Sign up</h1>
             </div>
-            <div class="login-form">
+            <div class="signup-form">
                 <div class="email-container">
-                    <label for="formGroupExampleInput" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+                    <input type="email" class="form-control" name="email" id="login-username" placeholder="email">
+                </div>
+                <div class="name-container">
+                    <input type="text" class="form-control" name="name" id="login-name" placeholder="name">
                 </div>
                 <div class="password-container">
-                    <label for="formGroupExampleInput2" class="form-label">Password</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="">
+                    <input type="password" class="form-control" name="password" id="login-password" placeholder="password">
                 </div>
                 <div class="btn-wrap">
-                    <button type="button" class="sign-in-btn">Sign Up</button>
+                    <button type="submit" class="sign-up-btn" id="sign-up">Sign Up</button>
                 </div>
             </div>
         </fieldset>
     </form>
+
 
 </body>
 
