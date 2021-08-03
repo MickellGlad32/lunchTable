@@ -15,11 +15,13 @@ router.post('/', function(req, res, next) {
     title: req.body.title,
     category: req.body.category,
     ingredients: req.body.ingredients,
-    instructions: req.body.instructions
-   
-    
+    instructions: req.body.instructions       
   })
     .then((recipe) => {
+      db.Instruction.create({
+        steps: recipe.instructions,
+        RecipeId: recipe.id,
+      })
       // send new recipe as response
       res.status(201).json(recipe)
     })

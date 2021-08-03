@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Recipe.hasMany(models.Favorite)
-      Recipe.hasMany(models.Ingredient)
-      Recipe.hasMany(models.Instruction)
+      Recipe.hasOne(models.Instruction)
+    
     }
   };
   Recipe.init({

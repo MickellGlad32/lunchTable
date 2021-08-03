@@ -15,13 +15,22 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
-  Favorite.init({
-    UserId: DataTypes.INTEGER,
-    RecipeId: DataTypes.INTEGER,
-    Title: DataTypes.STRING
-
-  
-
+  Favorite.init({      
+    title: DataTypes.STRING,
+    RecipeId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Recipes',
+        Key: 'id'
+      }
+    },
+    UserId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Users',
+        Key: 'id'
+      }
+    }
   }, {
     sequelize,
     modelName: 'Favorite',
