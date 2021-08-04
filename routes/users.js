@@ -68,6 +68,7 @@ router.post('/login', async(req, res) => {
         return
       } else {
         res.status(422).json({error: "user does not exist"})
+        res.redirect("/login.html") //figure out how to get it to redirect back to login
       }
     } else {
       bcrypt.compare(password, user.password)
@@ -79,6 +80,7 @@ router.post('/login', async(req, res) => {
           } else {
             //incorrect password
             res.status(401).json({ error: 'incorrect password' })
+            res.redirect("/login.html") //figure out how to egt it toi redirect back to login
           }
         })
     }

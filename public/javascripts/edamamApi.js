@@ -1,5 +1,3 @@
-//const { createReadStream } = require("fs")
-
 const searchBar = document.getElementById('input-search')
 const searchForm = document.getElementById('search-form')
 
@@ -14,11 +12,9 @@ searchForm.addEventListener('submit', (event) => {
         }
     })
         .then(response => {
-           
             return response.json()
         })
         .then((data) => {
-            
             cards.innerHTML = renderRecipes(data.hits)
         })
         .catch(err => {
@@ -41,9 +37,9 @@ searchForm.addEventListener('submit', (event) => {
                         <input type="hidden" value="${dietLabels[0]} name="category">
                         <input type="hidden" value="${url}" name="instructions">
                         <input type="hidden" value="${ingredients[0].text}" name="ingredients"> 
-                        <button type="submit">Add favorite recipe</button>
+                        <button type="submit" class="btn btn-outline-dark eventButton">Add favorite recipe</button>
+                        <a id="eventButton" data-id="${id}" data-name="${label}" href="${url}" target="_blank" class="btn btn-outline-dark eventButton">Recipe Page</a>
                         </form>
-                        <a id="eventButton" data-id="${id}" data-name="${label}" href="./results.html" class="btn btn-outline-light eventButton">Recipe Page</a>
                     </div>
                 </div>`
         })
