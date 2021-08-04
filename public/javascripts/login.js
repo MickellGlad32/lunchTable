@@ -12,3 +12,5 @@ document.addEventListener('click', (event) => {
         }
     }
 })
+
+// Sign in switch to sign out
