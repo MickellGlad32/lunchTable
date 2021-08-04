@@ -35,7 +35,7 @@ router.post('/:id', (req, res) => {
           title: recipe.title
         }).then((favorite) => {
           // respond with new favorite
-          res.status(201).json(favorite)
+          res.redirect("/favorites.html")
         })
       })
     })
@@ -71,7 +71,7 @@ router.post('/', function (req, res, next) {
         }
       }).then(() => {
         // send new recipe as response
-        res.status(201).json(recipe)
+        res.redirect("/favorites.html")
       })
     })
 });
