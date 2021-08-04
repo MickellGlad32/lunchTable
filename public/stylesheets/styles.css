@@ -23,7 +23,8 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 150px 0px 150px;
+    padding: 0px 150px 0px 50px;
+    border-bottom: 2px solid black;
     
     /* background-color: #FFD578; */
 }
@@ -61,17 +62,21 @@ a:visited {
   .top-container{
     background-color: #FFD578;
     background-size: cover;
+
 }
 
 .chef-pic{
-    height: 500px;
-    width: 400px;
+    height: 400px;
+    width: 300px;
 }
 
 .left-right-container{
     display: flex;
     justify-content: space-around;
+    margin-top: 25px;
     padding: 0px 200px 0px 150px;
+    height: 650px;
+
 }
 
 .left-side-wrap{
@@ -79,6 +84,9 @@ a:visited {
     align-items: center;
     text-align: center;
     font-family: 'Dosis', sans-serif;
+    height: 500px;
+    width: 500px;
+    /* margin-right: 70px; */
 }
 
 .main-container{
@@ -87,17 +95,4 @@ a:visited {
     height: 450px;
 }
 
-.search{
-    width: 550px;
-    align-items: center;
-}
 
-div .row{
-    display: flex;
-    justify-content: center;
-    margin: 30px 0px 0px 0px;
-}
-
-#main-search{
-    margin: 0px 0px 0px 15px;
-}
