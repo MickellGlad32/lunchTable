@@ -3,7 +3,7 @@ const db = require('../../models')
 var router = express.Router();
 
 // POST /api/v1/recipes
-router.post('/', (req, res, next) => {
+router.post('/new', (req, res, next) => {
 
   // check for all required fields
   if (!req.body || !req.body.title || !req.body.instructions|| !req.body.ingredients) {
@@ -31,7 +31,7 @@ router.post('/', (req, res, next) => {
         UserId: req.session.user.id
       })
       // send new recipe as response
-      res.status(201).json(recipe)
+      res.redirect("/new.html")
     })
 });
 

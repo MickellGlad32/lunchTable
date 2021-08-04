@@ -38,18 +38,18 @@
             <div class="add-title">
                 <h1>Add New Recipe </h1>
             </div>
-            <div class="add-form">
+            <div class="add-form form" method="POST"  action='/Recipes/new'>
                 <div class="name-container">
-                    <input type="text" class="form-control" name="name" id="new-name" placeholder="name of dish">
+                    <input type="text" class="form-control" name="title" id="new-name" placeholder="name of dish">
                 </div>
                 <div class="category-container">
-                    <input type="text" class="form-control" id="new-category" placeholder="category">
+                    <input type="text" class="form-control" name='category' id="new-category" placeholder="category">
                 </div>
                 <div class="ingredients-container">
-                    <input type="text" class="form-control" id="new-ingredients" placeholder="ingredients">
+                    <input type="text" class="form-control" name="ingredients" id="new-ingredients" placeholder="ingredients">
                 </div>
                 <div class="instructions-container">
-                    <input type="text" class="form-control" id="new-instructions" placeholder="instructions">
+                    <input type="text" class="form-control" name="instructions" id="new-instructions" placeholder="instructions">
                 </div>
                 <div class="btn-wrap">
                     <button type="submit" class="add-btn" id="add">Add</button>
