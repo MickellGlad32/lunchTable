@@ -61,7 +61,6 @@ a:visited {
   .top-container{
     background-color: #FFD578;
     background-size: cover;
-    height: 650px;
 }
 
 .chef-pic{
@@ -86,4 +85,19 @@ a:visited {
     background-color: #3A3755;
     background-size: cover;
     height: 450px;
+}
+
+.search{
+    width: 550px;
+    align-items: center;
+}
+
+div .row{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px 0px 0px;
+}
+
+#main-search{
+    margin: 0px 0px 0px 15px;
 }
