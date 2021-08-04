@@ -40,6 +40,8 @@ router.post('/:id', (req, res) => {
       })
     })
 })
+
+
 router.post('/', function (req, res, next) {
   // check for all required fields
   if (!req.body || !req.body.title || !req.body.ingredients || !req.body.instructions) {
@@ -69,12 +71,27 @@ router.post('/', function (req, res, next) {
           UserId: req.session.user.id,
           RecipeId: recipe[0].id
         }
-      }).then(() => {
+      }).then((favorite) => {
         // send new recipe as response
+        console.log(favorite)
         res.redirect("/favorites.html")
       })
     })
 });
+
+
+router.get('/:UserId', (req, res) => {
+
+  db.Favorite.findAll({
+    where: {
+      UserId: req.session.user.id
+    }
+  }).then((favorites) => {
+    console.log(favorites)
+    res.json(favorites)
+  })
+})
+
 router.delete('/api/v1/favorites/:id', (req, res) => {
   // get id
   const id = parseInt(req.params.id)
