@@ -65,29 +65,28 @@ router.post('/', function (req, res, next) {
     }
   })
     .then((recipe) => {
-      console.log(recipe[0].id)
       db.Favorite.findOrCreate({
         where: {
+          title: recipe[0].title,
+          instructions: recipe[0].instructions,
           UserId: req.session.user.id,
           RecipeId: recipe[0].id
         }
       }).then((favorite) => {
         // send new recipe as response
-        console.log(favorite)
         res.redirect("/favorites.html")
       })
     })
 });
 
 
-router.get('/:UserId', (req, res) => {
+router.get('/my-favorites', (req, res) => {
 
   db.Favorite.findAll({
     where: {
       UserId: req.session.user.id
     }
   }).then((favorites) => {
-    console.log(favorites)
     res.json(favorites)
   })
 })

@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   Favorite.init({      
     title: DataTypes.STRING,
+    instructions: DataTypes.STRING,
     RecipeId: {
       type: DataTypes.INTEGER,
       references: {
