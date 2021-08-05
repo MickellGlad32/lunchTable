@@ -9,7 +9,7 @@ searchForm.addEventListener('submit', (event) => {
     fetch("https://edamam-recipe-search.p.rapidapi.com/search?q=" + searchInputHTML, {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "bad60bbcd7msh2db02d2aad21ee5p12cc14jsna7cb23852138",
+            "x-rapidapi-key": "c1c27efd16msh8450b0115d8c953p19ee43jsn4e451dea3a66",
             "x-rapidapi-host": "edamam-recipe-search.p.rapidapi.com"
         }
     })
@@ -39,7 +39,7 @@ searchForm.addEventListener('submit', (event) => {
                     <img src="${image}" class=" card-img-top border border-2 border-light shadow p-3  bg-body rounded" alt="...">
                     <div class="card-body mb-3">
                         <h5 id="recipe-name"class="card-title">${label}</h5>
-                        <p id="recipe-source" class="card-text">${source}</p>
+                        
                         <form method="post" action="/api/v1/favorites">
                         <input type="hidden" value="${label}" name="title">
                         <input type="hidden" value="${dietLabels[0]} name="category">
