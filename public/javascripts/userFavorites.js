@@ -20,8 +20,7 @@ function renderFavorites(favoritesArray) {
         
         return `
         <div class="card-img-top" style="width: 18rem;">
-                    
-                    <div class="card-body mb-3">
+        <div class="card-body mb-3">  
                         <h5 id="recipe-name"class="card-title">${result.title}</h5>
                         <button><a target="_blank" href="${result.instructions}">Recipe page</a></button>
                         
