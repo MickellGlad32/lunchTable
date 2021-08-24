@@ -45,7 +45,7 @@ app.use('/api/v1/recipes' , checkAuth, apiRecipesRouter)
 app.use('/api/v1/favorites' , checkAuth, apiFavoritesRouter)
 
 
-server.listen(3000, '127.0.0.1', () => {
-    console.log('Server Listening on http://127.0.0.1:3000')
+server.listen(process.env.PORT || 3000, '127.0.0.1', () => {
+    console.log(`listening on ${process.env.PORT || 3000}`)
     
 })
