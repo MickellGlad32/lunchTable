@@ -14,7 +14,7 @@ const server = http.createServer(app)
 const checkAuth = require('./checkAuth');
 
 var indexRouter = require('./routes/index');
-const usersRouter = require('./routes/Users')
+const usersRouter = require('./routes/users')
 const apiRecipesRouter = require('./routes/api/recipes')
 const apiFavoritesRouter = require('./routes/api/favorites')
 
