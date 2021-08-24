@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     event.preventDefault()
     
-    fetch("http://127.0.0.1:3000/api/v1/favorites/my-favorites" , {
+    fetch("/api/v1/favorites/my-favorites" , {
         "method": "GET"
     })
         .then(response => {
